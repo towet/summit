@@ -69,15 +69,16 @@ export const HeroSection = () => {
           </div>
           
           {/* Right Visual */}
-          <div className="relative hidden lg:block">
-            <div className="relative z-10 float">
+          <div className="relative lg:mt-0 mt-8">
+            {/* Desktop Layout */}
+            <div className="hidden lg:block relative z-10 float">
               <img 
                 src={heroVisual} 
                 alt="SwiftPay payment flow visualization" 
                 className="w-full h-auto rounded-2xl shadow-elevated"
               />
               
-              {/* Floating Cards - Now visible on all screens */}
+              {/* Floating Cards - Desktop */}
               <div className="absolute -left-8 top-1/4 glass rounded-xl p-4 shadow-card animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
@@ -101,10 +102,24 @@ export const HeroSection = () => {
                   </div>
                 </div>
               </div>
+              
+              {/* Background Glow for Image - Desktop */}
+              <div className="absolute inset-0 bg-glow-gradient rounded-full scale-150 -z-10" />
             </div>
             
-            {/* Background Glow for Image */}
-            <div className="absolute inset-0 bg-glow-gradient rounded-full scale-150 -z-10" />
+            {/* Mobile Layout */}
+            <div className="lg:hidden">
+              <div className="relative z-10">
+                <img 
+                  src={heroVisual} 
+                  alt="SwiftPay payment flow visualization" 
+                  className="w-full h-auto rounded-2xl shadow-elevated"
+                />
+                
+                {/* Background Glow for Image - Mobile */}
+                <div className="absolute inset-0 bg-glow-gradient rounded-full scale-150 -z-10" />
+              </div>
+            </div>
           </div>
           
           {/* Mobile Floating Cards - Shown below stats on small devices */}

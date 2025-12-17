@@ -37,7 +37,7 @@ export const Navbar = () => {
             alt="Summit Edge Logo" 
             className="w-16 h-16 rounded-lg shadow-glow-sm group-hover:shadow-glow transition-shadow"
           />
-          <span className="text-foreground font-bold text-xl hidden sm:block">
+          <span className="text-foreground font-bold text-xl">
             Summit<span className="text-primary">Edge</span>
           </span>
         </a>
