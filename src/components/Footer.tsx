@@ -7,7 +7,7 @@ const footerLinks = {
     { label: 'Blog', href: '#' },
   ],
   products: [
-    { label: 'SwiftPay API', href: '#swiftpay' },
+    { label: 'SwiftPay API', href: 'https://www.swiftpayfinancial.com/', external: true },
     { label: 'Billing', href: '#services' },
     { label: 'Microtick', href: '#services' },
   ],
@@ -85,7 +85,11 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.products.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                  <a 
+                    href={link.href} 
+                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                    {...(link.external && { target: '_blank', rel: 'noopener noreferrer' })}
+                  >
                     {link.label}
                   </a>
                 </li>

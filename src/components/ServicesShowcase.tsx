@@ -11,7 +11,8 @@ const services = [
     description: 'Integrate M-Pesa payments into your platform in minutes. Our robust API handles everything from checkout to settlement.',
     features: ['Instant Setup', 'Real-time Processing', 'Secure Transactions'],
     cta: 'View API Docs',
-    href: '#swiftpay',
+    href: 'https://www.swiftpayfinancial.com/',
+    external: true,
     gradient: 'from-primary/30 to-primary/5',
     iconBg: 'bg-primary/20',
     iconColor: 'text-primary',
@@ -71,63 +72,129 @@ export const ServicesShowcase = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className={`group relative glass rounded-2xl overflow-hidden hover-lift cursor-pointer transition-all duration-500 ${service.borderGlow}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Image Container */}
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                {/* Image Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-                
-                {/* Floating Icon */}
-                <div className={`absolute bottom-4 left-6 w-14 h-14 rounded-xl ${service.iconBg} backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg`}>
-                  <service.icon className={`w-7 h-7 ${service.iconColor}`} />
-                </div>
-              </div>
-              
-              {/* Content */}
-              <div className="p-6 lg:p-8 pt-4">
-                {/* Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                
-                <div className="relative z-10">
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-gradient transition-all">
-                    {service.title}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-muted-foreground mb-5 leading-relaxed text-sm">
-                    {service.description}
-                  </p>
-                  
-                  {/* Features */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {service.features.map((feature, fIndex) => (
-                      <span
-                        key={fIndex}
-                        className="text-xs font-medium px-3 py-1.5 rounded-full bg-muted/50 text-muted-foreground border border-border/30 backdrop-blur-sm"
-                      >
-                        {feature}
-                      </span>
-                    ))}
+            service.external ? (
+              <a
+                key={index}
+                href={service.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group relative glass rounded-2xl overflow-hidden hover-lift cursor-pointer transition-all duration-500 ${service.borderGlow}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {/* Service Card Content */}
+                <div className="h-full">
+                  {/* Image Container */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    {/* Image Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+                    
+                    {/* Floating Icon */}
+                    <div className={`absolute bottom-4 left-6 w-14 h-14 rounded-xl ${service.iconBg} backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg`}>
+                      <service.icon className={`w-7 h-7 ${service.iconColor}`} />
+                    </div>
                   </div>
                   
-                  {/* CTA */}
-                  <Button variant="ghost" className="group/btn p-0 h-auto text-primary hover:text-primary/80 hover:bg-transparent">
-                    {service.cta}
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                  </Button>
+                  {/* Content */}
+                  <div className="p-6 lg:p-8 pt-4">
+                    {/* Gradient Overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                    
+                    <div className="relative z-10">
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-gradient transition-all">
+                        {service.title}
+                      </h3>
+                      
+                      {/* Description */}
+                      <p className="text-muted-foreground mb-5 leading-relaxed text-sm">
+                        {service.description}
+                      </p>
+                      
+                      {/* Features */}
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {service.features.map((feature, fIndex) => (
+                          <span
+                            key={fIndex}
+                            className="text-xs font-medium px-3 py-1.5 rounded-full bg-muted/50 text-muted-foreground border border-border/30 backdrop-blur-sm"
+                          >
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      {/* CTA */}
+                      <Button variant="ghost" className="group/btn p-0 h-auto text-primary hover:text-primary/80 hover:bg-transparent">
+                        {service.cta}
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            ) : (
+              <div
+                key={index}
+                className={`group relative glass rounded-2xl overflow-hidden hover-lift cursor-pointer transition-all duration-500 ${service.borderGlow}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {/* Image Container */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Image Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+                  
+                  {/* Floating Icon */}
+                  <div className={`absolute bottom-4 left-6 w-14 h-14 rounded-xl ${service.iconBg} backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg`}>
+                    <service.icon className={`w-7 h-7 ${service.iconColor}`} />
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-6 lg:p-8 pt-4">
+                  {/* Gradient Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                  
+                  <div className="relative z-10">
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-gradient transition-all">
+                      {service.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-muted-foreground mb-5 leading-relaxed text-sm">
+                      {service.description}
+                    </p>
+                    
+                    {/* Features */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {service.features.map((feature, fIndex) => (
+                        <span
+                          key={fIndex}
+                          className="text-xs font-medium px-3 py-1.5 rounded-full bg-muted/50 text-muted-foreground border border-border/30 backdrop-blur-sm"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    {/* CTA */}
+                    <Button variant="ghost" className="group/btn p-0 h-auto text-primary hover:text-primary/80 hover:bg-transparent">
+                      {service.cta}
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
+            )
           ))}
         </div>
       </div>

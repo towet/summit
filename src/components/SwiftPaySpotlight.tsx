@@ -76,10 +76,12 @@ export const SwiftPaySpotlight = () => {
               ))}
             </div>
             
-            <Button variant="hero" size="lg" className="group">
-              Get API Keys Free
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <a href="https://www.swiftpayfinancial.com/" target="_blank" rel="noopener noreferrer">
+              <Button variant="hero" size="lg" className="group">
+                Get API Keys Free
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
           </div>
           
           {/* Right - Interactive Demo Panel */}

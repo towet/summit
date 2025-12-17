@@ -5,7 +5,7 @@ import logo from '@/assets/LoGo.png';
 
 const navLinks = [
   { label: 'Services', href: '#services' },
-  { label: 'SwiftPay', href: '#swiftpay' },
+  { label: 'SwiftPay', href: 'https://www.swiftpayfinancial.com/', external: true },
   { label: 'Features', href: '#features' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Contact', href: '#contact' },
@@ -49,6 +49,7 @@ export const Navbar = () => {
               key={link.label}
               href={link.href}
               className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium relative group"
+              {...(link.external && { target: '_blank', rel: 'noopener noreferrer' })}
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -84,7 +85,8 @@ export const Navbar = () => {
                 key={link.label}
                 href={link.href}
                 className="text-muted-foreground hover:text-foreground transition-colors py-2 border-b border-border/50 last:border-0"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => !link.external && setIsMobileMenuOpen(false)}
+                {...(link.external && { target: '_blank', rel: 'noopener noreferrer' })}
               >
                 {link.label}
               </a>
