@@ -37,10 +37,12 @@ export const HeroSection = () => {
             
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              <Button variant="hero" size="xl" className="group">
-                Get Started
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <a href="https://www.swiftpayfinancial.com/" target="_blank" rel="noopener noreferrer">
+                <Button variant="hero" size="xl" className="group">
+                  Get Started
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
               <a 
                 href="https://wa.me/+254101960610" 
                 target="_blank" 

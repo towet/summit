@@ -28,10 +28,12 @@ export const CTASection = () => {
             
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button variant="hero" size="xl" className="group">
-                Start Integration Now
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <a href="https://www.swiftpayfinancial.com/" target="_blank" rel="noopener noreferrer">
+                <Button variant="hero" size="xl" className="group">
+                  Start Integration Now
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
               <Button variant="hero-secondary" size="xl">
                 Schedule a Demo
               </Button>

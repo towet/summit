@@ -62,9 +62,11 @@ export const Navbar = () => {
           <Button variant="ghost" size="sm">
             Sign In
           </Button>
-          <Button variant="hero" size="sm">
-            Get Started
-          </Button>
+          <a href="https://www.swiftpayfinancial.com/" target="_blank" rel="noopener noreferrer">
+            <Button variant="hero" size="sm">
+              Get Started
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -95,9 +97,11 @@ export const Navbar = () => {
               <Button variant="ghost" className="w-full">
                 Sign In
               </Button>
-              <Button variant="hero" className="w-full">
-                Get Started
-              </Button>
+              <a href="https://www.swiftpayfinancial.com/" target="_blank" rel="noopener noreferrer">
+                <Button variant="hero" className="w-full">
+                  Get Started
+                </Button>
+              </a>
             </div>
           </div>
         </div>
