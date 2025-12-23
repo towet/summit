@@ -47,7 +47,7 @@ export const CTASection = () => {
                 </div>
                 <span>summitedge.ca@gmail.com</span>
               </a>
-              <a href="tel:+254738167512" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group">
+<a href="tel:+254738167512" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group">
                 <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
                   <Phone className="w-5 h-5 text-secondary" />
                 </div>
